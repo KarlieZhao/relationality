@@ -11,10 +11,10 @@ let startPlaying = false;
 freesound.setToken("zcY7Xe1bN9d3VnNmVhzHsfMWI7Pamkr53amV57B0");
 
 function preload() {
-    speeches[0] = loadSound("./soundfiles/speech_german.mp3");
-    speeches[1] = loadSound("./soundfiles/candy-gained.mp3");
-    speeches[2] = loadSound("./soundfiles/aya.mp3");
-    speeches[3] = loadSound("./soundfiles/ro.mp3");
+    speeches[0] = loadSound("../soundfiles/speech_german.mp3");
+    speeches[1] = loadSound("../soundfiles/candy-gained.mp3");
+    speeches[2] = loadSound("../soundfiles/aya.mp3");
+    speeches[3] = loadSound("../soundfiles/ro.mp3");
 
 }
 
