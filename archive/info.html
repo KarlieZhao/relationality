@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <script src="freesound.js"></script>
+    <script src="bitcrusher.js"></script>
+    <script src="synth.js"></script>
+
+    <script src="https://unpkg.com/torus-dom/dist/index.min.js"></script>
+    <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+    <script type="text/javascript" src="freesound.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/codemirror.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/mode/javascript/javascript.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/javascript-hint.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/hint/show-hint.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/selection/mark-selection.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.59.2/addon/comment/comment.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/hydra-synth"></script>
+</head>
+
+<body>
+    Hall developed his theory of proxemics, arguing that human perceptions of space, although derived from sensory apparatus that all humans share, are molded and patterned by culture. He argued that differing cultural frameworks for defining and organizing
+    space, which are internalized in all people at an unconscious level, can lead to serious failures of communication and understanding in crosscultural settings. This book analyzed both the personal spaces that people form around their bodies as well
+    as the macro-level sensibilities that shape cultural expectations about how streets, neighborhoods and cities should be properly organized.
+
+
+    <div id="app">
+        <div style="font-size:3rem">
+        </div>
+    </div>
+    <script>
+        window.loadScript = (url = "") => {
+            const p = new Promise((res, rej) => {
+                var script = document.createElement("script");
+                script.onload = function() {};
+                script.onerror = (err) => {};
+                script.src = url;
+                document.head.appendChild(script);
+            });
+            return p;
+        };
+        window.addEventListener("mousedown", inputInit);
+        window.addEventListener("touchdown", inputInit);
+
+        let inited = false;
+
+        function inputInit() {
+            if (inited == false) {
+                document.querySelector("#app").innerHTML = ""
+                loadScript("synth.js")
+                setTimeout(() =>
+                    loadScript("script.js"), 3000)
+                inited = true
+            }
+        }
+    </script>
+</body>
+
+</html>
